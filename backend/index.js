@@ -1,13 +1,18 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 8000;
-const DBConnection = require('./db/db_connection');
+
+const DBConnection = require("./db/db_connection");
+const taskRouter = require("./routes/router");
+
 
 DBConnection();
 app.use(express.json());
 
+app.use(taskRouter);
+
 app.use((req, res, next) => {
-  const error = new Error('Invalid Request');
+  const error = new Error("Invalid Request");
   error.status = 404;
   next(error);
 });
@@ -22,5 +27,5 @@ app.use((error, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`app listenin on port ${port}`);
+  console.log(`app listening on port ${port}`);
 });
