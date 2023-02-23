@@ -6,13 +6,13 @@ class Register {
   signUp = async (req, res) => {
     try {
       const { name, email, password } = req.body;
-      if (!name) {
+      if (!email) {
         throw {
-          message: 'Please enter a name',
+          message: 'Please enter a email',
         };
       }
 
-      const passwordHash = bcrypt.hashSync(password, 10);
+      const passwordHash = bcrypt.hashSync(password);
 
       const response = await userDetails.create({
         name,
