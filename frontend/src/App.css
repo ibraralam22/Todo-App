@@ -1,10 +1,26 @@
-.App {
-  text-align: center;
+.nav-ul {
+  padding: 0;
+  margin: 0;
+  background-color: #23e1ff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-ul li a {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.nav-ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: #23e1ff;
 }
 
 @media (prefers-reduced-motion: no-preference) {
